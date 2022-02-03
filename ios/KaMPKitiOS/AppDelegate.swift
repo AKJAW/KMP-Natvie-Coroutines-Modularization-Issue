@@ -93,7 +93,7 @@ struct TodosListView: View {
 
 struct CountView: View {
     
-    private let getTodoCount = koin.get(objCClass: GetTodoCountIos.self) as! GetTodoCountIos
+    private let getTodoCount = koin.get(objCProtocol: GetTodoCount.self) as! GetTodoCount
     @State private var count: TodoCount = TodoCount(value: 0, lastUpdateTimestamp: 0)
     
     var body: some View {

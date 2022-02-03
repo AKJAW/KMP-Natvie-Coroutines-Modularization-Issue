@@ -3,13 +3,15 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 51;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		3DFF917C64A18A83DA010EE1 /* Pods_KaMPKitiOS.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B859F3FB23133D22AB9DD835 /* Pods_KaMPKitiOS.framework */; };
 		46A5B60826B04921002EFEAA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 46A5B60626B04920002EFEAA /* Main.storyboard */; };
 		46B5284D249C5CF400A7725D /* Koin.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46B5284C249C5CF400A7725D /* Koin.swift */; };
+		AEF6EF8E27ABFBDE00D1F5EC /* KMPNativeCoroutinesCombine in Frameworks */ = {isa = PBXBuildFile; productRef = AEF6EF8D27ABFBDE00D1F5EC /* KMPNativeCoroutinesCombine */; };
+		AEF6EF9027ABFBDE00D1F5EC /* KMPNativeCoroutinesCore in Frameworks */ = {isa = PBXBuildFile; productRef = AEF6EF8F27ABFBDE00D1F5EC /* KMPNativeCoroutinesCore */; };
 		F1465F0123AA94BF0055F7C3 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1465F0023AA94BF0055F7C3 /* AppDelegate.swift */; };
 		F1465F0A23AA94BF0055F7C3 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F1465F0923AA94BF0055F7C3 /* Assets.xcassets */; };
 		F1465F0D23AA94BF0055F7C3 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F1465F0B23AA94BF0055F7C3 /* LaunchScreen.storyboard */; };
@@ -60,6 +62,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AEF6EF8E27ABFBDE00D1F5EC /* KMPNativeCoroutinesCombine in Frameworks */,
+				AEF6EF9027ABFBDE00D1F5EC /* KMPNativeCoroutinesCore in Frameworks */,
 				3DFF917C64A18A83DA010EE1 /* Pods_KaMPKitiOS.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -171,6 +175,10 @@
 			dependencies = (
 			);
 			name = KaMPKitiOS;
+			packageProductDependencies = (
+				AEF6EF8D27ABFBDE00D1F5EC /* KMPNativeCoroutinesCombine */,
+				AEF6EF8F27ABFBDE00D1F5EC /* KMPNativeCoroutinesCore */,
+			);
 			productName = KaMPKitiOS;
 			productReference = F1465EFD23AA94BF0055F7C3 /* KaMPKitiOS.app */;
 			productType = "com.apple.product-type.application";
@@ -243,6 +251,9 @@
 				Base,
 			);
 			mainGroup = F1465EF423AA94BF0055F7C3;
+			packageReferences = (
+				AEF6EF8A27ABFBDE00D1F5EC /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */,
+			);
 			productRefGroup = F1465EFE23AA94BF0055F7C3 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -437,7 +448,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -495,7 +506,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -680,6 +691,30 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AEF6EF8A27ABFBDE00D1F5EC /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/rickclephas/KMP-NativeCoroutines.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AEF6EF8D27ABFBDE00D1F5EC /* KMPNativeCoroutinesCombine */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF6EF8A27ABFBDE00D1F5EC /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCombine;
+		};
+		AEF6EF8F27ABFBDE00D1F5EC /* KMPNativeCoroutinesCore */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AEF6EF8A27ABFBDE00D1F5EC /* XCRemoteSwiftPackageReference "KMP-NativeCoroutines" */;
+			productName = KMPNativeCoroutinesCore;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = F1465EF523AA94BF0055F7C3 /* Project object */;
 }

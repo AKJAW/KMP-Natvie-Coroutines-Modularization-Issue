@@ -3,6 +3,7 @@ import org.jetbrains.kotlin.gradle.plugin.mpp.KotlinNativeTarget
 
 plugins {
     kotlin("multiplatform")
+    id("com.rickclephas.kmp.nativecoroutines") version "0.11.1"
     kotlin("native.cocoapods")
     id("kotlinx-serialization")
     id("com.android.library")

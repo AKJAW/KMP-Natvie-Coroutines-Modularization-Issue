@@ -1,5 +1,6 @@
 plugins {
     kotlin("multiplatform")
+    id("com.rickclephas.kmp.nativecoroutines") version "0.11.1"
     id("com.android.library")
 }
 

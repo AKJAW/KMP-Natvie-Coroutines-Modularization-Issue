@@ -1,9 +1,10 @@
 use_frameworks!
 
-platform :ios, '9.0'
+platform :ios, '15.0'
 
 install! 'cocoapods', :deterministic_uuids => false
 
 target 'KaMPKitiOS' do
     pod 'shared', :path => '../kmm/shared/'
+    pod 'KMPNativeCoroutinesCombine'  # Combine implementation
 end

@@ -8,6 +8,8 @@
 
 import SwiftUI
 import shared
+import Combine
+import KMPNativeCoroutinesCombine
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -101,13 +103,25 @@ struct CountView: View {
                 Text("Last update \(count.lastUpdateTimestamp)")
             }
         }.onAppear(perform: {
-            getTodoCount.invoke().subscribe { count in
+            // Create a Future/AnyPublisher for the suspend function
+            let future = createPublisher(for: getTodoCount.invokeNative())
+
+            // Now use this future as you would any other
+            let cancellable = future.sink { completion in
+                print("Received completion: \(completion)")
+            } receiveValue: { count in
+                print("Received value: \(count)")
                 if (count != nil){
                     self.count = count as! TodoCount
                 }
-            } onThrow: { KotlinThrowable in
-                
             }
+//            getTodoCount.invoke().subscribe { count in
+//                if (count != nil){
+//                    self.count = count as! TodoCount
+//                }
+//            } onThrow: { KotlinThrowable in
+//
+//            }
 
         })
     }
